@@ -1,6 +1,13 @@
 #include <iostream>
 
 using namespace std;
+
+/*
+Nama     : Dhimas Aditya Sampoeha
+Kelas    : TI.20.D2
+NIM      : 312010224
+*/
+
 void trans(int b)
 {
    if (b == 0)
@@ -59,11 +66,35 @@ void trans(int b)
    {
       cout << "Tiga Ratus Tujuh Puluh Tujuh";
    }
+   else if (b == 610)
+   {
+      cout << "Enam Ratus Sepuluh";
+   }
+   else if (b == 987)
+   {
+      cout << "Sembilan Ratus Delapan Puluh Tujuh";
+   }
+   else if (b == 1597)
+   {
+      cout << "Seribu Lima Ratus Sembilan Puluh Tujuh";
+   }
+   else if (b == 2584)
+   {
+      cout << "Dua Ribu Lima Ratus Delapan Puluh Empat";
+   }
+   else if (b == 4181)
+   {
+      cout << "Empat Ribu Seratus Delapan Puluh Satu";
+   }
+   else if (b == 6765)
+   {
+      cout << "Enam Ribu Tujuh Ratus Enam Puluh Lima";
+   }
 }
 int main()
 {
    //DeklarasI Variabel a b c n
-   int a, b, c, n;
+   int a, b, c, n, no;
    a = 0;
    b = 1;
    c = 0;
@@ -82,7 +113,9 @@ int main()
    for (int i = 0; i < n; i++)
    {
       //Melakukan Cetak Result dengan Hasil dari memanggil Function Trans()
+      cout << i << ". ";
       trans(b);
+      //cout << " | ";
       cout << "" << endl;
       c = a + b;
       a = b;
