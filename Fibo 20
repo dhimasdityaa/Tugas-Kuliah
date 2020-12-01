@@ -1,0 +1,24 @@
+if (n == 0 || n == 1)
+   {
+      cout << "Error";
+   }
+   else
+   {
+      for (int i = 1; i <= n; i++)
+      {
+         if (i == 1)
+         {
+            cout << deret ke - << i << "." << n1 << " = " << angka(n1) << "\n";
+            continue;
+         }
+         if (i == 2)
+         {
+            cout << deret ke - << i << "." << n2 << " = " << angka(n2) << "\n";
+            continue;
+         }
+         next = n1 + n2;
+         n1 = n2;
+         n2 = next;
+         cout << deret ke - << i << "." << next << " = " << angka(next) << "\n";
+      }
+   }
