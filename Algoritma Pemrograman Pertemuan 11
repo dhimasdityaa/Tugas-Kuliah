@@ -1,0 +1,72 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int jumlah(int a, int b)
+{
+    int r;
+    r = a + b;
+    return (r);
+}
+
+int kurang(int a, int b)
+{
+    int r;
+    r = a - b;
+    return (r);
+}
+
+int kali(int a, int b)
+{
+    int r;
+    r = a * b;
+    return (r);
+}
+
+int bagi(int a, int b)
+{
+    int r;
+    r = a / b;
+    return (r);
+}
+int main()
+{
+    int z, x, ngali, ngebagi, bil1, bil2, bil3, bil4, bil5, bil6, bil7, bil8;
+
+    // =========
+
+    cout << "Masukan Bilangan yang Akan Di Tambah :" << endl;
+    cout << "Masukan Bilangan Pertama :";
+    cin >> bil1;
+    cout << "Masukan Bilangan Kedua :";
+    cin >> bil2;
+    z = jumlah(bil1, bil2);
+    cout << "Hasil Penjumlahan dari " << bil1 << " + " << bil2 << " = " << z << endl;
+    //
+    cout << "Masukan Bilangan yang Akan Di Dikurang :" << endl;
+    cout << "Masukan Bilangan Pertama :";
+    cin >> bil3;
+    cout << "Masukan Bilangan Kedua :";
+    cin >> bil4;
+    x = kurang(bil3, bil4);
+    cout << "Hasil Pengurangan dari " << bil3 << " - " << bil4 << " = " << x << endl;
+    //
+    cout << "Masukan Bilangan yang Akan Di Dikali :" << endl;
+    cout << "Masukan Bilangan Pertama :";
+    cin >> bil5;
+    cout << "Masukan Bilangan Kedua :";
+    cin >> bil6;
+    ngali = kali(bil5, bil6);
+    cout << "Hasil Pengalian dari " << bil5 << " x " << bil6 << " = " << ngali << endl;
+    //
+    cout << "Masukan Bilangan yang Akan Di Dibagi :" << endl;
+    cout << "Masukan Bilangan Pertama :";
+    cin >> bil7;
+    cout << "Masukan Bilangan Kedua :";
+    cin >> bil8;
+    ngebagi = bagi(bil7, bil8);
+    cout << "Hasil Pembagian dari " << bil7 << " / " << bil8 << " = " << ngebagi << endl;
+    cout << endl;
+    // +++
+
+    return 0;
+}
