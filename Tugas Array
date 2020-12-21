@@ -1,0 +1,151 @@
+#include <iostream>
+#include <string>
+#include <cstring>
+
+using namespace std;
+
+int cekVokal(char sentence[], int len)
+{
+     //Cek Huruf Fokal
+     int result = 0;
+     for (int i = 0; i <= len; i++)
+     {
+          if (sentence[i] == 'a' ||
+              sentence[i] == 'i' ||
+              sentence[i] == 'u' ||
+              sentence[i] == 'e' ||
+              sentence[i] == 'o')
+          {
+               result++;
+          }
+     }
+     return result;
+}
+
+int cekKonsonan(char sentence[], int len)
+{
+     //Cek Huruf Konsonan
+     int result = 0;
+     for (int i = 0; i <= len; i++)
+     {
+          if (sentence[i] == 'b' ||
+              sentence[i] == 'c' ||
+              sentence[i] == 'd' ||
+              sentence[i] == 'f' ||
+              sentence[i] == 'g' ||
+              sentence[i] == 'h' ||
+              sentence[i] == 'j' ||
+              sentence[i] == 'k' ||
+              sentence[i] == 'l' ||
+              sentence[i] == 'm' ||
+              sentence[i] == 'n' ||
+              sentence[i] == 'p' ||
+              sentence[i] == 'q' ||
+              sentence[i] == 'r' ||
+              sentence[i] == 's' ||
+              sentence[i] == 't' ||
+              sentence[i] == 'v' ||
+              sentence[i] == 'w' ||
+              sentence[i] == 'x' ||
+              sentence[i] == 'y' ||
+              sentence[i] == 'z')
+          {
+               result++;
+          }
+     }
+
+     return result;
+}
+
+int cekNg(char sentence[], int len)
+{
+     int result = 0;
+     //Cek Huruf Fokal
+     for (int i = 0; i <= len; i++)
+     {
+          if (sentence[i] == 'n')
+          {
+               if (sentence[i + 1] == 'g')
+               {
+                    result++;
+               }
+          }
+     }
+     return result;
+}
+
+int cekKarakter(char sentence[], int len)
+{
+     int result = 0;
+     //Cek Karakter
+     for (int i = 0; i <= len; i++)
+     {
+          if (sentence[i] == '`' ||
+              sentence[i] == '~' ||
+              sentence[i] == '!' ||
+              sentence[i] == '@' ||
+              sentence[i] == '#' ||
+              sentence[i] == '$' ||
+              sentence[i] == '%' ||
+              sentence[i] == '^' ||
+              sentence[i] == '&' ||
+              sentence[i] == '*' ||
+              sentence[i] == '(' ||
+              sentence[i] == ')' ||
+              sentence[i] == '-' ||
+              sentence[i] == '_' ||
+              sentence[i] == '+' ||
+              sentence[i] == '=' ||
+              sentence[i] == '[' ||
+              sentence[i] == '{' ||
+              sentence[i] == '}' ||
+              sentence[i] == ']' ||
+              sentence[i] == '|' ||
+              sentence[i] == ';' ||
+              sentence[i] == ':' ||
+              sentence[i] == ',' ||
+              sentence[i] == '<' ||
+              sentence[i] == '>' ||
+              sentence[i] == '.' ||
+              sentence[i] == '/' ||
+              sentence[i] == '?')
+          {
+               result++;
+          }
+     }
+     return result;
+}
+
+int main()
+{
+     //Inisiasi Variabel dan Array
+     int jumlah, vokal, konsonan, karakter, ng;
+     char kata[224];
+
+     //Input Procces
+     cout << "Masukan Kalimat : ";
+     cin.getline(kata, 224);
+     jumlah = strlen(kata);
+
+     //instance
+
+     //Calling Vokal Check Function
+     vokal = cekVokal(kata, jumlah);
+     //Calling Konsonan Check Function
+     konsonan = cekKonsonan(kata, jumlah);
+     //Calling Ng Check Function
+     ng = cekNg(kata, jumlah);
+     //Calling Karakter Check Function
+     karakter = cekKarakter(kata, jumlah);
+
+     //Print Vokal
+     cout << "Pada Kalimat Tersebut Terdapat " << vokal << " Huruf Vokal" << endl;
+     //Print Konsonan
+     cout << "Pada Kalimat Tersebut Terdapat " << konsonan << " Huruf Konsonan" << endl;
+     //Print ng
+     cout << "Pada Kalimat Tersebut Terdapat " << ng << " Ng" << endl;
+     //Print Karakter
+     cout << "Pada Kalimat Tersebut Terdapat " << karakter << " Karakter" << endl;
+
+     return 0;
+}
