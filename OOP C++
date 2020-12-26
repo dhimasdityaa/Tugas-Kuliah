@@ -1,0 +1,60 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class ayah
+{
+     string name, work;
+
+public:
+     void set()
+     {
+          cout << "Masukan Nama :";
+          cin >> name;
+     }
+
+     void disp()
+     {
+          cout << "Ayah saya adalah " << name << endl;
+     }
+
+     void setWork()
+     {
+          cout << "Ayah Bekerja di :";
+          cin >> work;
+     }
+     void ayahWork()
+     {
+          cout << "Ayah Bekerja di " << work << endl;
+     }
+};
+
+class ibu
+{
+     string nIbu;
+
+public:
+     void setIbu()
+     {
+          cout << "Masukan Nama :";
+          cin >> nIbu;
+     }
+
+     void dispIbu()
+     {
+          cout << "Ibu saya adalah " << nIbu;
+     }
+};
+
+int main()
+{
+     ayah oAyah;
+     ibu oIbu;
+     oAyah.set();
+     oAyah.setWork();
+     oAyah.disp();
+     oAyah.ayahWork();
+     oIbu.setIbu();
+     oIbu.dispIbu();
+
+     return 0;
+}
