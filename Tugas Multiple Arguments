@@ -1,0 +1,26 @@
+# Contoh Penggunaan *args
+def keuntungan(*total):
+    # Program Untuk Menghitung berapa % totak keuntungan
+    # Note : Rp.10.000.000 adalah modal
+    untung = sum(total) - 10000000
+    return (untung / 100000) * (100/100)
+
+# Contoh Penggunaan **args
+
+
+def tiketParkir(**data):
+    # Program Karcis Parkir
+    for k, v in data.items():
+        print(f"{k}: {v}")
+
+
+# Contoh Pemanggilan Function yang menggunakan *args
+untung = keuntungan(5000000, 7000000)
+print("Contoh Pengunaan *args")
+print(f"Total Keuntungan yang di dapat {untung}%")
+print(" ")
+
+# Contoh Pemanggilan Function yang menggunakan **args
+print("Contoh Penggunaan **args")
+tiketParkir(jam_Masuk="12.30 WIB, 19 - Mei - 2020 ",
+            No_Plat="B 4358 FIU", Jam_Keluar="15.23 WIB, 19 Mei 2020",)
