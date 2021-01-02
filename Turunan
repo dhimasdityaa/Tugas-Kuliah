@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Television
+{
+public:
+     void chanelTV()
+     {
+          cout << "RCTI" << endl;
+     };
+};
+
+class RCTI : public Television
+{
+public:
+     void hello()
+     {
+          Television::chanelTV();
+          cout << "Dunia Terbalik" << endl;
+     };
+};
+
+class GlobalTV : public Television
+{
+public:
+     void hello()
+     {
+          Television::chanelTV();
+          cout << "Cinema" << endl;
+     };
+};
+
+int main()
+{
+     RCTI test;
+     test.hello();
+
+     GlobalTV test2;
+     test2.hello();
+
+     return 0;
+}
