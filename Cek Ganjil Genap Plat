@@ -1,0 +1,141 @@
+#include <iostream>
+#include <string>
+#include <cstring>
+#include <ctime>
+using namespace std;
+
+class ganjilGenap
+{
+     // Declare Public Attribute
+     int numPol, date;
+     char result[3];
+     string ggResult, dateResult;
+
+public:
+     // Method For Checking PLAT Number
+     void cekNoPol(char noPol[], int len)
+     {
+          // Declare Private Variable for cekNoPol
+          int totalAngka = 0, length;
+
+          //Checking Length
+          if (len == 10)
+          {
+               length = 3;
+          }
+          else if (len == 9)
+          {
+               length = 2;
+          }
+          else if (len == 8)
+          {
+               length = 1;
+          }
+          else if (len == 7)
+          {
+               length = 0;
+          }
+
+          // Looping For Checking PLAT Number
+          for (int i = 0; i <= len; i++)
+          {
+               if (noPol[i] == '0' ||
+                   noPol[i] == '1' ||
+                   noPol[i] == '2' ||
+                   noPol[i] == '3' ||
+                   noPol[i] == '4' ||
+                   noPol[i] == '5' ||
+                   noPol[i] == '6' ||
+                   noPol[i] == '7' ||
+                   noPol[i] == '8' ||
+                   noPol[i] == '9')
+               {
+                    result[totalAngka] = noPol[i];
+                    totalAngka++;
+               }
+          }
+          numPol = result[length] - 48;
+     }
+
+     // Method For Checking PLAT Number is Genap or Ganjil
+     void cekGanjilGenap()
+     {
+          if (numPol % 2 == 0)
+          {
+               // Value of Variabel is "Genap"
+               ggResult = "Genap";
+          }
+          else
+          {
+               // Value of Variabel is "Ganjil"
+               ggResult = "Ganjil";
+          }
+     }
+
+     // Method For Checking Date
+     void cekTanggal(int date)
+     {
+          if (date % 2 == 0)
+          {
+               // Value of Variabel is "Genap"
+               dateResult = "Genap";
+          }
+          else
+          {
+               // Value of Variabel is "Ganjil"
+               dateResult = "Ganjil";
+          }
+     }
+
+     // Method For Return Result
+     void _result(int date, string name)
+     {
+          if (dateResult == ggResult)
+          {
+               // Result If a dateResult and ggResult is a Same
+               cout << "Pada Tanggal " << date << " Kendaran Bapak/Ibu " << name << " Dapat Melintas Karena Hari Ini Bertanggal " << dateResult << " dan PLAT Nomer Bapak/Ibu Juga Bernomer " << ggResult;
+               cout << endl;
+          }
+          else
+          {
+               // Result If a dateResult and ggResult is not Same
+               cout << "Pada Tanggal " << date << " Kendaraan Bapak/Ibu " << name << " TIDAK Dapat Melintas Karena Hari Ini Bertanggal " << dateResult << " Sedangkan PLAT Bapak/Ibu Bernomer " << ggResult;
+               cout << endl;
+          }
+     }
+};
+
+int main()
+{
+     // Declare and Initiate Variabel
+     int length, date;
+     char name[255], noPlat[12];
+     string result;
+
+     // Get Time
+     time_t now = time(0);
+     tm *ltm = localtime(&now);
+     date = ltm->tm_mday;
+
+     // Program Input
+     cout << "Cek Plat Nomer Kendaraan" << endl;
+
+     // Input Nama
+     cout << "Masukan Nama : ";
+     cin.getline(name, 255);
+
+     // Input Nomer PLAT
+     cout << "Masukan Nomor Plat : ";
+     cin.getline(noPlat, 12);
+
+     // Mengukur Panjang Array Plat
+     length = strlen(noPlat);
+
+     // Inisiate Class
+     ganjilGenap GG;
+     GG.cekNoPol(noPlat, length);
+     GG.cekGanjilGenap();
+     GG.cekTanggal(date);
+     GG._result(date, name);
+     return 0;
+}
